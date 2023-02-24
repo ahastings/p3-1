@@ -1268,13 +1268,13 @@ double Parity(unsigned int n) // prev
 	return parity;*/
 }
 
-void display_shape(GLenum mode, Polyhedron *this_poly)
+void display_shape(GLenum mode, Polyhedron* this_poly)
 {
 	unsigned int i, j;
 	GLfloat mat_diffuse[4];
 
-  glEnable (GL_POLYGON_OFFSET_FILL);
-  glPolygonOffset (1., 1.);
+	glEnable(GL_POLYGON_OFFSET_FILL);
+	glPolygonOffset(1., 1.);
 
 	glEnable(GL_DEPTH_TEST);
 	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
@@ -1327,14 +1327,15 @@ void display_shape(GLenum mode, Polyhedron *this_poly)
 				for (int j = 0; j < 2; j++) {
 					corners[3 * i + j].cTriangle = poly->tlist[i];
 					corners[3 * i + j].cVertex = poly->tlist[i]->verts[j];
-					corners[3 * i + j].cEdge = poly->tlist[i]->edges[(j+1)%3];
-					corners[3 * i + j].next = &corners[3 * i + (j+1) % 3]; // Deference correct here?
-					corners[3 * i + j].prev = &corners[3 * i + (j+2) % 3];
+					corners[3 * i + j].cEdge = poly->tlist[i]->edges[(j + 1) % 3];
+					corners[3 * i + j].next = &corners[3 * i + (j + 1) % 3]; // Deference correct here?
+					corners[3 * i + j].prev = &corners[3 * i + (j + 2) % 3];
 				}
 			}
 
-			
+
 			break;
+		}
 		case 3:
 			mat_diffuse[0] = 1.0;			//repeats infinitely after press
 			mat_diffuse[1] = 0.0;
@@ -1370,7 +1371,7 @@ void display_shape(GLenum mode, Polyhedron *this_poly)
 			}
 			glEnd();
 			break;
-		case 5:	
+		case 5:
 			glBegin(GL_POLYGON);
 			for (j = 0; j < 3; j++) {
 				Vertex* temp_v = temp_t->verts[j];
@@ -1407,33 +1408,33 @@ void display_shape(GLenum mode, Polyhedron *this_poly)
 			glEnd();
 			break;
 		case 8: //a
-				mat_diffuse[0] = 1.0;
-				mat_diffuse[1] = 0.0;
-				mat_diffuse[2] = 0.0;
-				mat_diffuse[3] = 0.90;
-				glDisable(GL_LIGHTING);
-				glMaterialfv(GL_FRONT, GL_DIFFUSE, mat_diffuse);
-				glBegin(GL_POLYGON);
-				for (j = 0; j < 3; j++) {
-					Vertex* temp_v = temp_t->verts[j];
-					glNormal3d(temp_v->x, temp_v->y, temp_v->z);
-					glColor3f(temp_v->x, temp_v->y, temp_v->z);
-					glVertex3d(temp_v->x, temp_v->y, temp_v->z);
-				}
-				glEnd();
-				break;
+			mat_diffuse[0] = 1.0;
+			mat_diffuse[1] = 0.0;
+			mat_diffuse[2] = 0.0;
+			mat_diffuse[3] = 0.90;
+			glDisable(GL_LIGHTING);
+			glMaterialfv(GL_FRONT, GL_DIFFUSE, mat_diffuse);
+			glBegin(GL_POLYGON);
+			for (j = 0; j < 3; j++) {
+				Vertex* temp_v = temp_t->verts[j];
+				glNormal3d(temp_v->x, temp_v->y, temp_v->z);
+				glColor3f(temp_v->x, temp_v->y, temp_v->z);
+				glVertex3d(temp_v->x, temp_v->y, temp_v->z);
+			}
+			glEnd();
+			break;
 
 		case 9:
 			glBegin(GL_POLYGON);
-			for (j=0; j<3; j++) {
+			for (j = 0; j < 3; j++) {
 				mat_diffuse[0] = 1.0;
 				mat_diffuse[1] = 0.0;
 				mat_diffuse[2] = 0.0;
 				mat_diffuse[3] = 1.0;
-		
+
 				glMaterialfv(GL_FRONT, GL_DIFFUSE, mat_diffuse);
 
-				Vertex *temp_v = temp_t->verts[j];
+				Vertex* temp_v = temp_t->verts[j];
 				glNormal3d(temp_t->normal.entry[0], temp_t->normal.entry[1], temp_t->normal.entry[2]);
 
 				glColor3f(1.0, 0.0, 0.0);
@@ -1445,8 +1446,8 @@ void display_shape(GLenum mode, Polyhedron *this_poly)
 	}
 }
 
-void display(void)
-{
+
+void display(void){
   GLint viewport[4];
   int jitter;
 
