@@ -1,0 +1,21 @@
+﻿  learnply.cpp
+C:\Users\AHast\source\repos\p3-1_test\learnply\learnply.cpp(146,14): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\AHast\source\repos\p3-1_test\learnply\learnply.cpp(362,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\AHast\source\repos\p3-1_test\learnply\learnply.cpp(886,14): warning C4018: '<': signed/unsigned mismatch
+C:\Users\AHast\source\repos\p3-1_test\learnply\learnply.cpp(931,13): warning C4018: '<': signed/unsigned mismatch
+C:\Users\AHast\source\repos\p3-1_test\learnply\learnply.cpp(948,13): warning C4018: '<': signed/unsigned mismatch
+C:\Users\AHast\source\repos\p3-1_test\learnply\learnply.cpp(957,14): warning C4018: '<': signed/unsigned mismatch
+C:\Users\AHast\source\repos\p3-1_test\learnply\learnply.cpp(1067,16): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\AHast\source\repos\p3-1_test\learnply\learnply.cpp(1074,16): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\AHast\source\repos\p3-1_test\learnply\learnply.cpp(1076,5): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\AHast\source\repos\p3-1_test\learnply\learnply.cpp(1110,50): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+C:\Users\AHast\source\repos\p3-1_test\learnply\learnply.cpp(1111,50): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+C:\Users\AHast\source\repos\p3-1_test\learnply\learnply.cpp(1144,26): warning C4305: '=': truncation from 'double' to 'GLfloat'
+C:\Users\AHast\source\repos\p3-1_test\learnply\learnply.cpp(1198,16): warning C4018: '<': signed/unsigned mismatch
+C:\Users\AHast\source\repos\p3-1_test\learnply\learnply.cpp(1298,13): warning C4018: '<': signed/unsigned mismatch
+C:\Users\AHast\source\repos\p3-1_test\learnply\learnply.cpp(1345,16): warning C4018: '<': signed/unsigned mismatch
+C:\Users\AHast\source\repos\p3-1_test\learnply\learnply.cpp(1452,25): warning C4305: '=': truncation from 'double' to 'GLfloat'
+C:\Users\AHast\source\repos\p3-1_test\learnply\learnply.cpp(1469,25): warning C4305: '=': truncation from 'double' to 'GLfloat'
+C:\Users\AHast\source\repos\p3-1_test\learnply\learnply.cpp(1507,25): warning C4305: '=': truncation from 'double' to 'GLfloat'
+C:\Users\AHast\source\repos\p3-1_test\learnply\learnply.cpp(1523,26): warning C4305: '=': truncation from 'double' to 'GLfloat'
+  learnply.vcxproj -> C:\Users\AHast\source\repos\p3-1_test\learnply\Release\learnply.exe
