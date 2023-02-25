@@ -231,21 +231,24 @@ class Corner;
 
 class Corner {
 public:
-	int index;
-	
-	Corner() {};
-	Corner(int num_edges) :num_edges(num_edges), cEdges(num_edges){}; // class constructer needed to make non constant vector
+
+	Corner() {};//default 
+	//1s
+	// constructor -- Todo add rest of variables to it
 	int num_edges;
+	Corner(int num_edges) :num_edges(num_edges), cEdges(num_edges){}; // class constructer needed to make non constant vector
 	std::vector<Edge> cEdges;//a vector instead of built in array
-	~Corner() {}; // deconstructor - needed for vec with dynamic amount of class edge vars (unconstant)
-	
-	Corner* prev;
-	Corner* next; 
-	
+	~Corner() {}; // destructor - needed for vec with dynamic amount of class edge vars (unconstant)
 	Triangle* cTriangle;
 	Vertex* cVertex;
 	Edge *cEdge;
 	//we need Index(id) list //const int num_edges=0;//Edge* cEdges[num_edges];// Triangle/int triangle_id;//Vertex vert;//int nedges;	//Edge** edges; // opposite of corner
+
+	int index = 0;
+	Vertex* vertex = NULL;
+	Corner* opp = NULL;
+	Corner* prev = NULL;
+	Corner* next = NULL;
 };
 /*
 class CornerList {

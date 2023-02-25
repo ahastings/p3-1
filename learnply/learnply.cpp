@@ -67,11 +67,12 @@ void display_shape(GLenum mode, Polyhedron *poly);
 void initialize_system();
 void find_eigenvalues_and_eigenvectors();
 //p3-1
-//globals
-
-//Declarations
+//globals//Declarations
 void display_irre_ver();
 void irreg_reg_valence(int valence);
+
+std::vector<Corner*> cornerList;
+Corner** cornerTable = NULL;
 //
 /******************************************************************************
 Main program.
@@ -104,7 +105,6 @@ int main(int argc, char *argv[])
 	printf("Number of Verts = %d, Number of Edges = %d, Number of Faces = %d; Euler V-E+F = %d\n",
 		poly->nverts,    poly->nedges,    poly->ntris,    (poly->nverts - poly->nedges + poly->ntris));
 	//
-	
 	glutInit(&argc, argv);
 	glutInitDisplayMode (GLUT_DOUBLE | GLUT_RGB);
 	glutInitWindowPosition (20, 20);
@@ -1311,10 +1311,11 @@ void display_shape(GLenum mode, Polyhedron* this_poly)
 				if (i == this_poly->seed)
 					glColor3f(0.0, 0.0, 1.0);
 				else
-					glColor3f(1.0, 1.0, 1.0);
+					glColor3f(1.0, 1.0, 1.0); //? blue is being activated from this_poly->seed)"this_poly->seed" switched to the var "poly"?
 				glVertex3d(temp_v->x, temp_v->y, temp_v->z);
 			}
 			glEnd();
+
 			break;
 		case 1:
 		{
@@ -1332,11 +1333,18 @@ void display_shape(GLenum mode, Polyhedron* this_poly)
 					corners[3 * i + j].prev = &corners[3 * i + (j + 2) % 3];
 				}
 			}
-
-
 			break;
 		}
-		case 3:
+		case 2: {
+			break;
+		}
+		case 3: {
+			break;
+		}
+		case 4: {
+			break;
+		}
+		case 5:
 			mat_diffuse[0] = 1.0;			//repeats infinitely after press
 			mat_diffuse[1] = 0.0;
 			mat_diffuse[2] = 0.0;
@@ -1353,7 +1361,7 @@ void display_shape(GLenum mode, Polyhedron* this_poly)
 			}//b
 			glEnd();
 			break;
-		case 4:
+		case 6:
 			mat_diffuse[0] = 1.0;//repeats infinitely after press
 			mat_diffuse[1] = 0.0;
 			mat_diffuse[2] = 0.0;
@@ -1367,26 +1375,6 @@ void display_shape(GLenum mode, Polyhedron* this_poly)
 				int L_checker = 1; //  is L an arbitrary = I picked int or it could be float flor
 				glColor3d(Parity(floor(temp_v->x / L_checker)), Parity(floor(temp_v->y / L_checker)), Parity(floor(temp_v->z / L_checker)));
 				glColor3d(Parity(floor(temp_v->x / L_checker)) - fabs(temp_v->normal.entry[0]), Parity(floor(temp_v->y / L_checker)) - fabs(temp_v->normal.entry[0]), Parity(floor(temp_v->z / L_checker)) - fabs(temp_v->normal.entry[0]));
-				glVertex3d(temp_v->x, temp_v->y, temp_v->z);
-			}
-			glEnd();
-			break;
-		case 5:
-			glBegin(GL_POLYGON);
-			for (j = 0; j < 3; j++) {
-				Vertex* temp_v = temp_t->verts[j];
-				glNormal3d(temp_t->normal.entry[0], temp_t->normal.entry[1], temp_t->normal.entry[2]);
-				glColor3f(1.0, 1.0, 1.0);
-				glVertex3d(temp_v->x, temp_v->y, temp_v->z);
-			}
-			glEnd();
-			break;
-		case 6:
-			glBegin(GL_POLYGON);
-			for (j = 0; j < 3; j++) {
-				Vertex* temp_v = temp_t->verts[j];
-				glNormal3d(temp_t->normal.entry[0], temp_t->normal.entry[1], temp_t->normal.entry[2]);
-				glColor3f(1.0, 1.0, 1.0);
 				glVertex3d(temp_v->x, temp_v->y, temp_v->z);
 			}
 			glEnd();
@@ -1524,7 +1512,6 @@ void find_eigenvalues_and_eigenvectors()
 }
 
 //P3
-
 void display_irre_ver() {
 	for (int i = 0; i < poly->nverts; i++) { //max_verts; i++) {
 		Vertex* tempv = poly->vlist[i];
@@ -1567,4 +1554,3 @@ angle1 = acos((a * a + b * b - c * c) / 2 * a * b);
 angle2 = acos((a * a + b * b - c * c) / 2 * b * c);
 angle3 = acos((a * a + b * b - c * c) / 2 * a * c);
 */
-//
