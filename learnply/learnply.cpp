@@ -71,7 +71,7 @@ void find_eigenvalues_and_eigenvectors();
 void display_irre_ver();
 void irreg_reg_valence(int valence);
 
-std::vector<Corner*> cornerList;
+std::vector<Corner*> cornerList;//1
 Corner** cornerTable = NULL;
 //
 /******************************************************************************
@@ -102,7 +102,7 @@ int main(int argc, char *argv[])
 	find_eigenvalues_and_eigenvectors();//previous project
 
 	//P3-1
-	printf("Number of Verts = %d, Number of Edges = %d, Number of Faces = %d; Euler V-E+F = %d\n",
+	printf("\n Number of Vertices = %d , Number of Edges = %d , Number of Faces = %d , Euler Characteristic (V-E+F) = %d \n",
 		poly->nverts,    poly->nedges,    poly->ntris,    (poly->nverts - poly->nedges + poly->ntris));
 	//
 	glutInit(&argc, argv);
@@ -1315,7 +1315,6 @@ void display_shape(GLenum mode, Polyhedron* this_poly)
 				glVertex3d(temp_v->x, temp_v->y, temp_v->z);
 			}
 			glEnd();
-
 			break;
 		case 1:
 		{
@@ -1336,7 +1335,7 @@ void display_shape(GLenum mode, Polyhedron* this_poly)
 			break;
 		}
 		case 2: {
-			break;
+			
 		}
 		case 3: {
 			break;

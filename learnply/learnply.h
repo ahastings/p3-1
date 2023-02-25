@@ -245,10 +245,10 @@ public:
 	//we need Index(id) list //const int num_edges=0;//Edge* cEdges[num_edges];// Triangle/int triangle_id;//Vertex vert;//int nedges;	//Edge** edges; // opposite of corner
 
 	int index = 0;
-	Vertex* vertex = NULL;
-	Corner* opp = NULL;
-	Corner* prev = NULL;
-	Corner* next = NULL;
+	Vertex* vertex = NULL; //vertex of corner
+	Corner* opp = NULL; // opposite of corner
+	Corner* prev = NULL; // previous corner
+	Corner* next = NULL;// nextcorner
 };
 /*
 class CornerList {
