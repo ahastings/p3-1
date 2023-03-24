@@ -72,6 +72,7 @@ void display_irre_ver();
 void irreg_reg_valence(int valence);
 
 std::vector<Corner*> cornerList;//1
+int sub_num = 1; //Number of subdivisons interations you would like to run
 Corner** cornerTable = NULL;
 //
 /******************************************************************************
@@ -118,6 +119,12 @@ int main(int argc, char *argv[])
 	glutMainLoop(); 
 	poly->finalize();  // finalize everything
 
+	//Delete[][] OCT; //Delete []OCT // Delete[] edges //Delete[] corners
+	for (int i = 0; i < cornerList.size(); ++i) {
+		delete cornerList[i]; // Calls ~cornerList (which deallocates cornerList[i]->...) 
+		// and deallocates *cornerList[i]
+	}
+	cornerList.clear(); // Deallocate the vector
   return 0;    /* ANSI C requires main to return int. */
 }
 ///prev
