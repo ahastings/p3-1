@@ -70,6 +70,10 @@ void find_eigenvalues_and_eigenvectors();
 //globals//Declarations
 void display_irre_ver();
 void irreg_reg_valence(int valence);
+//Final
+void Calc_newPoint_RegSubDiv(); // need to find the point between the edges
+void RegSubdivTri(); //function for turning 1 tri into 4 tris / loop / PTO Input 3 Vertex points 
+void RegSubdiv(); // Function for calling RegSubdivTri on all of the polygon
 
 std::vector<Corner*> cornerList;//1
 int sub_num = 1; //Number of subdivisons interations you would like to run
@@ -1410,10 +1414,13 @@ void display_shape(GLenum mode, Polyhedron* this_poly)
 			}
 			break;
 		}
-		case 2: {
-			
+		case 2: //Is there a second call for this case 2 in this file???
+		{
+	
+			break;
 		}
-		case 3: {
+		case 3: { // exact same as case 5
+
 			break;
 		}
 		case 4: {
@@ -1617,6 +1624,14 @@ void irreg_reg_valence(int valence) {
 
 	}
 }
+//function for turning 1 tri into 4 tris / loop / PTO Input 3 Vertex points 
+void RegSubdivTri() {
+
+}; //function for turning 1 tri into 4 tris / loop / PTO Input 3 Vertex points 
+void RegSubdiv() {
+
+};
+
 //tests
 /*
 
