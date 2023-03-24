@@ -231,31 +231,41 @@ class Corner;
 
 class Corner {
 public:
-
-	Corner() {};//default 
-	//1s
+	int index , min , max; // we need Index(id) to sort them by it in a list
+	Vertex* vertex ; //vertex of corner
+	Corner* opp ; // opposite of corner
+	Corner* prev ; // previous corner
+	Corner* next;// next corner
+	Corner() {
+		this->index = 0, this->min = 0, this->max = 0;
+		this->vertex = NULL; //vertex of corner
+		this->opp = NULL; // opposite of corner
+		this->prev = NULL; // previous corner
+		this->next = NULL;// next corner
+	};//default 
 	// constructor -- Todo add rest of variables to it
 	int num_edges;
+	//Construcor to set the number of edges // needs work or remove
 	Corner(int num_edges) :num_edges(num_edges), cEdges(num_edges){}; // class constructer needed to make non constant vector
 	std::vector<Edge> cEdges;//a vector instead of built in array
-	~Corner() {}; // destructor - needed for vec with dynamic amount of class edge vars (unconstant)
+	~Corner() {
+		delete[] vertex; //deallocating vertex of corner
+		delete[] opp; //deallocating  opposite of corner
+		delete[] prev; //deallocating  previous corner
+		delete[] next;//deallocating  next corner
+	}; // destructor - needed for vec with dynamic amount of class edge vars (unconstant)
 	Triangle* cTriangle;
 	Vertex* cVertex;
 	Edge *cEdge;
-	//we need Index(id) list //const int num_edges=0;//Edge* cEdges[num_edges];// Triangle/int triangle_id;//Vertex vert;//int nedges;	//Edge** edges; // opposite of corner
-
-	int index = 0;
-	Vertex* vertex = NULL; //vertex of corner
-	Corner* opp = NULL; // opposite of corner
-	Corner* prev = NULL; // previous corner
-	Corner* next = NULL;// nextcorner
 };
+// cut from Corner //const int num_edges=0;//Edge* cEdges[num_edges];// Triangle/int triangle_id;//Vertex vert;//int nedges;	//Edge** edges; // opposite of corner
 /*
 class CornerList {
 public:
 	int num_corners; // this is CornerList?
 	int max_corners;
-	Corner** corners;
+	Corner** corners; //corners table - connected to this corner + int numcorners
+
 
 	///*
 	CornerList(int max) {
@@ -286,7 +296,7 @@ public:
 	}
 };
 */
-//test stuff - unused - from Du-1
+// Du-1
 //std::vector<Triangle*> tris;
 //std::vector<Corner*> corners;
 //
